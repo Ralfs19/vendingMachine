@@ -76,14 +76,13 @@ while ($wallet <= $selectedItemValue){
         $times = intdiv($remainder, $coin);
         $remainder -= $coin * $times;
         $payout[] += $coin * $times;
-        
     }
     $remove = array(0);
     $result = array_diff($payout, $remove);
 
     echo "Thank you for purchase" . PHP_EOL;
-    echo 'Coins left- ';
-    foreach ($result as $res){
+    echo 'Coins reamains - ';
+    foreach ($result as $res) {
         echo $res . ' coins ';
     }
 
