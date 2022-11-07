@@ -16,6 +16,7 @@ echo "[2] Tea" . PHP_EOL;
 
     if ($input1 == 2){
         $selectedItemValue = $vendingItems['Tea'];
+        $selectedItemName = key($vendingItems);
     }
 
     echo 'You choose ' . $selectedItemName . ' ' . PHP_EOL;
@@ -36,13 +37,7 @@ $coins = [
 ];
 $times = 0;
 $payout = [];
-/*foreach ($coins as $coin => $val){
-     $times = intdiv($remainder, $coin);
-     $remainder -= $coin * $times;
-     $payout[] += $coin * $times;
-}*/
-/*$remove = array(0);
-$result = array_diff($payout, $remove);*/
+
 
 while ($wallet <= $selectedItemValue){
     echo "Insert coins {$selectedItemValue} to buy it." . PHP_EOL;
@@ -81,6 +76,7 @@ while ($wallet <= $selectedItemValue){
         $times = intdiv($remainder, $coin);
         $remainder -= $coin * $times;
         $payout[] += $coin * $times;
+        
     }
     $remove = array(0);
     $result = array_diff($payout, $remove);
